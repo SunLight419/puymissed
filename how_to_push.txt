@@ -1,0 +1,5 @@
+git add .
+git commit -m "content"
+git push origin main
+npm run build
+gh-pages -d build
