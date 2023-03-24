@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SunLight419/puyosim-with-chatgpt/static/css/main.0744dd32.css",
+    "main.js": "/SunLight419/puyosim-with-chatgpt/static/js/main.36b3d414.js",
+    "index.html": "/SunLight419/puyosim-with-chatgpt/index.html",
+    "main.0744dd32.css.map": "/SunLight419/puyosim-with-chatgpt/static/css/main.0744dd32.css.map",
+    "main.36b3d414.js.map": "/SunLight419/puyosim-with-chatgpt/static/js/main.36b3d414.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0744dd32.css",
+    "static/js/main.36b3d414.js"
+  ]
+}
