@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/SunLight419/puyosim-with-chatgpt/static/css/main.0744dd32.css",
-    "main.js": "/SunLight419/puyosim-with-chatgpt/static/js/main.36b3d414.js",
-    "index.html": "/SunLight419/puyosim-with-chatgpt/index.html",
-    "main.0744dd32.css.map": "/SunLight419/puyosim-with-chatgpt/static/css/main.0744dd32.css.map",
-    "main.36b3d414.js.map": "/SunLight419/puyosim-with-chatgpt/static/js/main.36b3d414.js.map"
+    "main.css": "/puyosim-with-chatgpt/static/css/main.0744dd32.css",
+    "main.js": "/puyosim-with-chatgpt/static/js/main.36b3d414.js",
+    "index.html": "/puyosim-with-chatgpt/index.html",
+    "main.0744dd32.css.map": "/puyosim-with-chatgpt/static/css/main.0744dd32.css.map",
+    "main.36b3d414.js.map": "/puyosim-with-chatgpt/static/js/main.36b3d414.js.map"
   },
   "entrypoints": [
     "static/css/main.0744dd32.css",
