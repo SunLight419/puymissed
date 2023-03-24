@@ -1,13 +1,118 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: inline-block;
 }
+
+.row {
+  display: flex;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.color-option.selected {
+  border: 2px solid black;
+}
+
+.color-picker-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.color-option.empty {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell-inner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  top: 5%; /* この行を変更 */
+  border: 2px solid black;
+}
+
+
+.eye {
+  position: absolute;
+}
+
+
+.cell-inner .eye {
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+}
+
+.cell-inner .eye-left {
+  left: 10%;
+  top: 20%;
+}
+
+.cell-inner .eye-right {
+  right: 20%;
+  top: 20%;
+}
+
+.eye-outer {
+  border-radius: 50%;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black; /* この行を追加 */
+}
+
+.eye-inner {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* この行を変更 */
+  height: 70%; /* この行を変更 */
+}
+
+/* 不要？ */
+.eye-left {
+  left: 25%; /* この行を変更 */
+  top: 20%;
+  width: 30%; /* この行を追加 */
+  height: 30%; /* この行を追加 */
+}
+
+.eye-right {
+  right: 25%; /* この行を変更 */
+  top: 20%;
+  width: 30%; /* この行を追加 */
+  height: 30%; /* この行を追加 */
+}
+

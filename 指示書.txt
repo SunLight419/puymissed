@@ -1,0 +1,12 @@
+HTML, CSS, React,JavaScriptを使って以下のようなwebアプリを作成したいです。
+# PlainFieldという長さ78の配列が存在する。
+# PlainFieldは{"0", "red", "blue", "green", "yellow", "purple", "ojama"}のいずれかの値をとる。
+# selectedColorという変数が存在する。
+# selectedColorは{"0", "red", "blue", "green", "yellow", "purple", "ojama"}のいずれかの値をとる。
+# 画面には縦13マス、横6マスのFieldがある。
+# Fieldの左からx(0 <= x <= 5)列目、上からy(0 <= y <= 12)行目のマスの値とPlainField[x * 13 + y] との値を対応させたい。
+# PlainField[i] === "0" の時、Fieldの対応するマスの色を白にしたい。
+# PlainField[i] === "red" の時、Fieldの対応するマスの色を赤にしたい。
+# PlainField[i] === "blue" の時、Fieldの対応するマスの色を青にしたい。
+# PlainField[i] === "ojama" の時、Fieldの対応するマスの色を灰色にしたい。
+# Fieldの特定のマス i をクリックすると、PlainField[i] をselectedColor に書き換え、Field[i] の色を対応する色に変更したい。
