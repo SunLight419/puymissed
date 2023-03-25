@@ -5,7 +5,6 @@
   padding: 0 1rem;
   background-color: #333;
   height: 40px;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   /* ヘッダーの高さを変更 */
@@ -17,8 +16,8 @@
 
 .header-title {
   color: #fff;
-  /* font-size: 1.5rem; */
-  font-size: calc(1.5vw + 12px); /* 12px + 1.5% of viewport width */
+  font-size: 1.5rem;
+  /* font-size: calc(1.5vw + 12px); 12px + 1.5% of viewport width */
   /* max-font-size: 32px; maximum font size */
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);

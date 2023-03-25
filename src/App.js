@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
+import "./App.css";
 import Header from './Header';
 import Usage from './Usage';
+import UpdateHistory from './UpdateHistory';
 import Footer from './Footer';
 
 const initialPlainField = Array(78).fill("empty");
@@ -25,7 +27,6 @@ const speedMap = {
 
 function App() {
 
-
   const [plainField, setPlainField] = useState(initialPlainField);
   const [selectedColor, setSelectedColor] = useState("red");
   const [chainSpeed, setChainSpeed] = useState("moderate");
@@ -33,6 +34,17 @@ function App() {
   const [fallen, setFallen] = useState(false);
   const [chainCount, setChainCount] = useState(0);
   const [score, setScore] = useState(0);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+
+  // update history
+  const [updates, setUpdates] = useState([
+    '2023-03-24 バージョン 0.0.1 - ベータ版リリース',
+    '2023-03-26 バージョン 0.0.2 - 使い方、更新履歴を追加',
+    '2023-03-26 Sample',
+    '2023-03-26 Sample',
+    '----',
+    '2023-??-?? バージョン 1.0.1 - 初期リリース(予定)',
+  ]);
 
 
 
@@ -42,6 +54,30 @@ function App() {
     setPlainField(newPlainField);
     setFallen(false);
   };
+
+  const handleMouseDown = (index) => {
+    setIsMouseDown(true);
+    const newPlainField = [...plainField];
+    newPlainField[index] = selectedColor;
+    setPlainField(newPlainField);
+    setFallen(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsMouseDown(false);
+  };
+
+  const handleMouseEnter = (index) => {
+    if (isMouseDown) {
+      const newPlainField = [...plainField];
+      newPlainField[index] = selectedColor;
+      setPlainField(newPlainField);
+      setFallen(false);
+    }
+  };
+
+
+
 
   const handleRightClick = (e, index) => {
     e.preventDefault(); // ブラウザのデフォルトの右クリックメニューを無効化
@@ -267,7 +303,11 @@ function App() {
       key={index}
       className="cell"
       onClick={() => handleLeftClick(index)}
-      onContextMenu={(e) => handleRightClick(e, index)} // この行を追加
+      onContextMenu={(e) => handleRightClick(e, index)} // 右クリック
+      // 以下、長押し処理
+      onMouseDown={() => handleMouseDown(index)}
+      onMouseUp={handleMouseUp}
+      onMouseEnter={() => handleMouseEnter(index)}
     >
       {color !== "empty" && (
         <div
@@ -294,6 +334,56 @@ function App() {
       )}
     </div>
   );
+
+  //wasm
+
+  /// PlainFieldの値を0〜6の数字に変換する関数
+  function convertPlainFieldToNumbers(plainField) {
+    const conversionTable = {
+      'empty': 0,
+      'red': 1,
+      'blue': 2,
+      'green': 3,
+      'yellow': 4,
+      'purple': 5,
+      'ojama': 6
+    };
+
+    const numbersArray = new Array(6 * 13).fill(0);
+
+    for (let x = 0; x < 6; x++) {
+      for (let y = 0; y < 13; y++) {
+        numbersArray[x * 13 + y] = conversionTable[plainField[x + y * 6]];
+      }
+    }
+
+    return numbersArray;
+  }
+
+  // 数値をPlainFieldの要件に合うように変換する関数
+  function convertNumbersToPlainField(numbersArray) {
+    const conversionTable = {
+      0: 'empty',
+      1: 'red',
+      2: 'blue',
+      3: 'green',
+      4: 'yellow',
+      5: 'purple',
+      6: 'ojama'
+    };
+
+    const innerField = new Array(6 * 13).fill('empty');
+
+    for (let x = 0; x < 6; x++) {
+      for (let y = 0; y < 13; y++) {
+        innerField[x + y * 6] = conversionTable[numbersArray[x * 13 + y]];
+      }
+    }
+
+    return innerField;
+  }
+
+  // render cell
 
 
   const renderRow = (start) => {
@@ -338,16 +428,18 @@ function App() {
                   ))}
               </div>
             ))}
+          {/* wasm用ボタン */}
+          {/* <button>WASMボタン</button> */}
           {/* 連鎖数と得点を表示 */}
           <div className="chain-score">
             {chainCount} 連鎖 {score}(実装予定) 点
           </div>
           <button onClick={handleAutoClick}>Auto</button>
           <select value={chainSpeed} onChange={handleSpeedChange}>
-            <option value="instantaneous">Instantaneous</option>
-            <option value="fast">Fast</option>
-            <option value="moderate">Moderate</option>
-            <option value="slow">Slow</option>
+            <option value="instantaneous">Instantaneous（爆速）</option>
+            <option value="fast">Fast（速）</option>
+            <option value="moderate">Moderate（中）</option>
+            <option value="slow">Slow（遅）</option>
           </select>
           <button onClick={handleStepClick}>Step</button>
           <button onClick={handleRedoClick}>Redo</button>
@@ -355,6 +447,7 @@ function App() {
         </div>
       </div>
       <Usage />
+      <UpdateHistory updates={updates} />
       <Footer />
     </div>
   );

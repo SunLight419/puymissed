@@ -1,0 +1,24 @@
+.update-history {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.update-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(5 * 1.5em + 5 * 10px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.update-item {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    font-size: 1.0em;
+}
