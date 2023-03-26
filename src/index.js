@@ -5,7 +5,7 @@ import App from './App';
 import ReactGA from 'react-ga'; // for google analytics
 
 // for google analytics
-ReactGA.initialize('YOUR_TRACKING_ID');
+ReactGA.initialize('G-MD4B3WYBK7');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
