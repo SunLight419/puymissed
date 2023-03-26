@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/puyosim-with-chatgpt/static/css/main.faf19994.css",
-    "main.js": "/puyosim-with-chatgpt/static/js/main.75fd01ae.js",
+    "main.js": "/puyosim-with-chatgpt/static/js/main.c5c25177.js",
     "index.html": "/puyosim-with-chatgpt/index.html",
     "main.faf19994.css.map": "/puyosim-with-chatgpt/static/css/main.faf19994.css.map",
-    "main.75fd01ae.js.map": "/puyosim-with-chatgpt/static/js/main.75fd01ae.js.map"
+    "main.c5c25177.js.map": "/puyosim-with-chatgpt/static/js/main.c5c25177.js.map"
   },
   "entrypoints": [
     "static/css/main.faf19994.css",
-    "static/js/main.75fd01ae.js"
+    "static/js/main.c5c25177.js"
   ]
 }
