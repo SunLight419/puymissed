@@ -5,7 +5,6 @@ import Header from './Header';
 import Usage from './Usage';
 import UpdateHistory from './UpdateHistory';
 import Footer from './Footer';
-import { initGA, trackPage } from './analytics'; // for google analytics
 
 const initialPlainField = Array(78).fill("empty");
 
@@ -27,28 +26,6 @@ const speedMap = {
 };
 
 function App() {
-
-  // for google analytics
-  const history = useHistory();
-
-  useEffect(() => {
-    // Google Analyticsの初期化
-    initGA();
-
-    // 初回ページビューを追跡
-    trackPage(window.location.pathname + window.location.search);
-
-    // ページ遷移ごとにページビューを追跡
-    const unlisten = history.listen((location) => {
-      trackPage(location.pathname + location.search);
-    });
-
-    // コンポーネントのクリーンアップ時にリスナーを解除
-    return () => {
-      unlisten();
-    };
-  }, [history]);
-
   const [plainField, setPlainField] = useState(initialPlainField);
   const [selectedColor, setSelectedColor] = useState("red");
   const [chainSpeed, setChainSpeed] = useState("moderate");
