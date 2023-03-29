@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/puyosim-with-chatgpt/static/css/main.2de09495.css",
-    "main.js": "/puyosim-with-chatgpt/static/js/main.35065c76.js",
+    "main.css": "/puyosim-with-chatgpt/static/css/main.bc22dbf5.css",
+    "main.js": "/puyosim-with-chatgpt/static/js/main.be2a9798.js",
+    "static/js/594.5881a5bf.chunk.js": "/puyosim-with-chatgpt/static/js/594.5881a5bf.chunk.js",
     "index.html": "/puyosim-with-chatgpt/index.html",
-    "main.2de09495.css.map": "/puyosim-with-chatgpt/static/css/main.2de09495.css.map",
-    "main.35065c76.js.map": "/puyosim-with-chatgpt/static/js/main.35065c76.js.map"
+    "main.bc22dbf5.css.map": "/puyosim-with-chatgpt/static/css/main.bc22dbf5.css.map",
+    "main.be2a9798.js.map": "/puyosim-with-chatgpt/static/js/main.be2a9798.js.map",
+    "594.5881a5bf.chunk.js.map": "/puyosim-with-chatgpt/static/js/594.5881a5bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2de09495.css",
-    "static/js/main.35065c76.js"
+    "static/css/main.bc22dbf5.css",
+    "static/js/main.be2a9798.js"
   ]
 }
